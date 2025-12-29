@@ -97,6 +97,7 @@ answerBtn.addEventListener('click',()=>{
     document.body.style.justifyContent='center';
     document.body.style.alignItems='center';
     document.body.style.minHeight='100vh';
+    showAch('first');
     const resultCont = document.createElement('div');
     resultCont.style.fontFamily='comic-sans';
     resultCont.style.color = '#000';

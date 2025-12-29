@@ -272,3 +272,50 @@ body {
         transform:scale(0.9);
     }
 }
+
+.notification{
+    position: fixed;
+    bottom: -200px;
+    right: 20px;
+    width: 360px;
+    background: #2d2d2d;
+    border: 1px solid #3d3d3d;
+    padding: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+    font-family:'segoe-ui';
+    z-index: 9999;
+    transition: bottom 0.4s cubic-bezier(0.25,0.46,0.45,0.94);
+    display:flex;
+    gap:12px;
+    align-items:flex-start;
+}
+
+.notification.show {
+    bottom: 20px;
+}
+
+.noti-icon {
+    width: 32px;
+    height: 32px;
+    background-image:url('./icons/info.png');
+    background-size:contain;
+    flex-shrink:0;
+    margin-top:2px;
+}
+
+.noti-txt {
+    flex: 1;
+}
+
+.noti-tl {
+    font-size: 14px;
+    font-weight: 600;
+    color:#fff;
+    margin-bottom: 4px;
+}
+
+.noti-desc {
+    font-size: 13px;
+    color:#b0b0b0;
+    line-height:1.4;
+}
