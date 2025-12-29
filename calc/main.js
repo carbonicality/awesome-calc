@@ -16,3 +16,22 @@ lines.forEach((line)=>{
     });
     title.appendChild(lineDiv);
 });
+
+//make input lbs wavy wowwie zoinks so cool.
+const labels = document.querySelectorAll('.input-lb');
+labels.forEach(lb => {
+    const text = lb.textContent;
+    lb.textContent='';
+    let charIdx=0;
+    Array.from(text).forEach(char => {
+        const span = document.createElement('span');
+        span.textContent=char;
+        span.style.animationDelay = `${charIdx*0.05}s`;
+        span.classList.add('wave-char');
+        if (char === ' ') {
+            span.style.width = '0.3em';
+        }
+        lb.appendChild(span);
+        charIdx++;
+    });
+});
