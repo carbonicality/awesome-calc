@@ -1,6 +1,6 @@
 //achievement code
 const achs={
-    first: {unlocked:false,title:'wow! first click!',desc:'perform your very cool VERY FIRST click!'}
+    first: {unlocked:false,title:'wow! first answer!',desc:'get your VERY first answer!'}
 }
 
 let calcCount = 0;
