@@ -35,6 +35,10 @@ body {
     box-shadow:0 4px 16px rgba(0,0,0,0.4);
 }
 
+.window.hidden {
+    opacity:0;
+}
+
 .titlebar {
     background:#0d0d0d;
     padding:0;
@@ -128,15 +132,21 @@ body {
 .win-content {
     padding: 30px;
     min-height:400px;
-    display:flex;
+    display:block;
     align-items:center;
     justify-content: center;
     background:#1f1f1f;
+    position:relative;
 }
 
-.placeholder { /*remove this when making real impl*/
-    color:#666;
-    font-size:14px;
+.win-content iframe {
+    display:block;
+    position:absolute;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100%;
+    border: none;
 }
 
 .msgbox {
@@ -241,4 +251,24 @@ body {
 
 .msgbox-btn:active {
     background: #252525;
+}
+
+@keyframes winOut1 {
+    from {
+        background:rgba(0,0,0,0.3);
+    }
+    to {
+        background: rgba(0,0,0,0);
+    }
+}
+
+@keyframes winOut2 {
+    from {
+        opacity:1;
+        transform:scale(1);
+    }
+    to {
+        opacity:0;
+        transform:scale(0.9);
+    }
 }
