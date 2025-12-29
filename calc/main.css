@@ -1,0 +1,45 @@
+@font-face {
+    font-family:'comic-sans';
+    src:url('./fonts/comic-sans.ttf') format('truetype');
+    font-weight:400;
+}
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body {
+    width:100vw;
+    height:100vh;
+    overflow:hidden;
+    position:relative;
+}
+
+.bg {
+    position:absolute;
+    top:-100%;
+    left:-100%;
+    width:300%;
+    height:300%;
+    background:repeating-linear-gradient(
+        -45deg,
+        #ff4444 0px,
+        #ff9944 100px,
+        #ffff66 200px,
+        #44ff44 300px,
+        #4477ff 400px,
+        #ff4444 500px
+    );
+    animation:coolbackgroundthing 4s linear infinite;
+}
+
+@keyframes coolbackgroundthing {
+    0% {
+        transform:translate(0,0);
+    }
+    100% {
+        transform:translate(353.55px,353.55px);
+    }
+}
