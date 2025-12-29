@@ -55,7 +55,7 @@ moreBtn.addEventListener('click', ()=>{
     textCont.style.lineHeight = '1.6';
     textCont.innerHTML = `
     <h3>more info wowwwwie (credits)</h3>
-    <li>deaen - made the original <a href="https://deaen.itch.io/awesomecalculator">awesome calculator</a> which is what this project is HEAVILY inspired by</li>
+    <li>deaen - made the original <a href="https://deaen.itch.io/awesomecalculator" target="_blank" style="color:blue;text-decoration:underline;">awesome calculator</a> which is what this project is HEAVILY inspired by</li>
     <li>carbon - made this version for the fudge YSWS</li>
     <li>oh yeah and press ENTER to go back to the actual calculator</li>`;
     document.body.appendChild(textCont);
@@ -82,6 +82,13 @@ answerBtn.addEventListener('click',()=>{
     else if (operator === '-') res = num1-num2;
     else if (operator === '/') res = num1/num2;
     else if (operator === '*') res = num1*num2;
+    //special handling
+    let displayRes = res;
+    if (res===67) {
+        displayRes='no.'// ANTI six seven.
+    } else if (num1 === 9 && num2 === 10 && operator === '+') {
+        displayRes='21';
+    }
     document.body.innerHTML = '';
     document.body.style.background ='#fff';
     document.body.style.overflow='auto';
@@ -95,7 +102,7 @@ answerBtn.addEventListener('click',()=>{
     resultCont.style.color = '#000';
     resultCont.style.fontSize = '72px';
     resultCont.style.textAlign='center';
-    resultCont.textContent=res;
+    resultCont.textContent=displayRes;
     const backTxt = document.createElement('div');
     backTxt.style.fontFamily='comic-sans';
     backTxt.style.color = '#666';
