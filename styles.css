@@ -1,0 +1,140 @@
+@font-face {
+    font-family:'segoe-ui';
+    src:url('./fonts/segoe-ui.ttf') format('truetype');
+    font-weight:400;
+}
+
+@font-face {
+    font-family:'comic-sans';
+    src:url('./fonts/comic-sans.ttf') format('truetype');
+    font-weight:400;
+}
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body {
+    font-family:'segoe-ui';
+    background-size:cover;
+    background-position: center;
+    background-image:url("https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/3730fe5b-4703-477f-800f-7e2bd14c56e1/d8z7xzb-707b43f2-5b89-4508-aca5-042729e54e97.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7InBhdGgiOiIvZi8zNzMwZmU1Yi00NzAzLTQ3N2YtODAwZi03ZTJiZDE0YzU2ZTEvZDh6N3h6Yi03MDdiNDNmMi01Yjg5LTQ1MDgtYWNhNS0wNDI3MjllNTRlOTcuanBnIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmZpbGUuZG93bmxvYWQiXX0.xa_p8x37J9r-QhfdcpTO-clP0q_G_FB-8JWz1OJujjs");
+    height: 100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:hidden;
+}
+
+.window {
+    width:500px;
+    background:#1f1f1f;
+    border:1px solid #505050;
+    box-shadow:0 4px 16px rgba(0,0,0,0.4);
+}
+
+.titlebar {
+    background:#0d0d0d;
+    padding:0;
+    display:flex;
+    align-items:center;
+    height:30px;
+    border-bottom: 1px solid #000;
+}
+
+.tleft {
+    display: flex;
+    align-items:center;
+    padding: 0 10px;
+    gap: 8px;
+    flex: 1;
+}
+
+.icon {
+    width:16px;
+    height:16px;
+    background-image:url('./icons/pc.png');
+}
+
+.title-txt {
+    color:#e0e0e0;
+    font-size:13px;
+    font-weight:400;
+}
+
+.title-btns {
+    display: flex;
+    height:100%;
+}
+
+.title-btn {
+    width:45px;
+    height:100%;
+    background:transparent;
+    border:none;
+    cursor:pointer;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    transition:background 0.1s; /*i still have no idea why vscode makes background red lmao :sob:*/
+    position:relative;
+}
+
+.title-btn:hover {
+    background:#232323;
+}
+
+.title-btn.close:hover {
+    background:#e81123;
+    transition:background 0.1s ease-in;
+}
+
+.title-btn.min::before {
+    content:'';
+    width:10px;
+    height:1px;
+    background:#e0e0e0;
+    display:block;
+}
+
+.title-btn.max::before {
+    content:'';
+    width:8px;
+    height:8px;
+    border:1px solid #e0e0e0;
+    display:block;
+    border-radius:0.5px;
+}
+
+.title-btn.close::before,
+.title-btn.close::after {
+    content:'';
+    position:absolute;
+    width:14px;
+    height:1px;
+    background:#e0e0e0;
+}
+
+.title-btn.close::before {
+    transform:rotate(45deg);
+}
+
+.title-btn.close::after {
+    transform:rotate(-45deg);
+}
+
+.win-content {
+    padding: 30px;
+    min-height:400px;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    background:#1f1f1f;
+}
+
+.placeholder { /*remove this when making real impl*/
+    color:#666;
+    font-size:14px;
+}
